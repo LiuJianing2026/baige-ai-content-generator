@@ -1,5 +1,19 @@
-.venv/
-.env
+# Python
 __pycache__/
 *.pyc
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# Cursor / editor
+.cursor/
+.vscode/
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Logs
+*.log

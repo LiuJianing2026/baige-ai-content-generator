@@ -56,6 +56,30 @@ platform = st.selectbox(
     ["抖音", "小红书", "朋友圈", "视频号", "快手"]
 )
 
+content_style = st.selectbox(
+    "内容风格",
+    ["朴实真实", "小红书种草", "抖音口播", "朋友圈自然", "避暑攻略", "亲子出游"]
+)
+guesthouse_profile = st.text_area(
+    "白格美宿真实特点",
+    value="白格美宿位于河南洛阳栾川重渡沟附近，是一家家人经营的山景民宿。民宿规模不算特别大，但氛围轻松，有院子，有K歌服务，客人有时会一起合唱、伴舞，晚上氛围很好。也可以提供烧烤、酒吧、咖啡等服务，适合朋友、家庭、团建、亲子游客在山里放松。"
+)
+
+account_status = st.text_area(
+    "账号现状",
+    value="账号已经运营两年，基础的房间介绍、停车介绍、民宿环境介绍、景区距离介绍已经拍过很多次。现在需要更有新意、更有情绪、更有传播点的内容，不要再只生成普通介绍民宿的脚本。"
+)
+
+available_materials = st.text_area(
+    "当前可拍素材",
+    value="院子、客人K歌、客人合唱、客人跳舞或伴舞、烧烤、咖啡、酒吧小氛围、山景、夜晚灯光、家人服务、客人入住前后反应、停车、房间、饭菜、去重渡沟游玩的游客。"
+)
+
+content_goal = st.selectbox(
+    "本次创作目标",
+    ["引流咨询", "提升账号播放量", "跟热点", "展示氛围", "吸引亲子家庭", "吸引年轻人", "吸引团建客人", "吸引带父母出游"]
+)
+
 st.divider()
 
 
@@ -78,9 +102,13 @@ if generate_button:
                     target_customer=target_customer,
                     selling_points=selling_points,
                     hot_topic=hot_topic,
-                    platform=platform
+                    platform=platform,
+                    content_style=content_style,
+                    guesthouse_profile=guesthouse_profile,
+                    account_status=account_status,
+                    available_materials=available_materials,
+                    content_goal=content_goal
                 )
-
                 generated_content = generate_content_by_ai(prompt)
 
                 st.success("内容方案已生成。")

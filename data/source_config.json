@@ -1,0 +1,53 @@
+{
+    "project_name": "白格美宿短视频运营中枢",
+    "module_name": "热点与同行观察雷达",
+    "current_stage": "week2_day1",
+    "hotsearch_status": {
+      "enabled": false,
+      "reason": "当前无法申请到抖音开放平台 hotsearch 权限，先使用多数据源适配器方案"
+    },
+    "enabled_sources": [
+      {
+        "source_key": "local_keywords",
+        "source_name": "本地关键词池",
+        "type": "internal_config",
+        "automation_level": "自动读取",
+        "description": "系统每天基于白格美宿关键词生成观察方向"
+      },
+      {
+        "source_key": "competitor_pool",
+        "source_name": "同行账号/关键词池",
+        "type": "internal_config",
+        "automation_level": "自动读取",
+        "description": "系统每天从同行池中生成观察任务"
+      },
+      {
+        "source_key": "douyin_index_manual",
+        "source_name": "抖音指数/巨量算数观察",
+        "type": "official_trend_tool",
+        "automation_level": "半自动导入",
+        "description": "暂时人工查看趋势结果，后续导入系统做评分"
+      },
+      {
+        "source_key": "third_party_csv",
+        "source_name": "第三方榜单导入",
+        "type": "csv_import",
+        "automation_level": "半自动导入",
+        "description": "从蝉妈妈、灰豚、飞瓜等工具导出榜单后导入系统"
+      }
+    ],
+    "reserved_sources": [
+      {
+        "source_key": "douyin_hotsearch",
+        "source_name": "抖音开放平台 hotsearch",
+        "status": "reserved",
+        "reason": "需要申请权限，当前不作为第二周核心依赖"
+      },
+      {
+        "source_key": "douyin_keyword_video_search",
+        "source_name": "抖音关键词视频搜索",
+        "status": "reserved",
+        "reason": "需要在应用详情中创建关键词，后续申请后再接入"
+      }
+    ]
+  }
